@@ -155,4 +155,3 @@
 <h2> 서버 Before and After</h2>
 <h3>피곤함이 느껴지는 잠죽자 서버s</h3>
 <img src="https://github.com/NOW-SOPT-SOPKATHON-WEB1/SERVER/assets/84909012/b9f78d7d-b36e-4b91-bebe-360a64b4218b" alt="서버 팀원 사진 (before)"/>
-<img src="https://github.com/NOW-SOPT-SOPKATHON-WEB1/SERVER/assets/84909012/84ae840c-c009-4e80-9d29-3aa774903a3f" alt="서버 팀원 사진 (after)"/>
