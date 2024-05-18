@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor
-public class User {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String userId;
+    @Column(name = "room_id")
+    private Long roomId;
 
     private String name;
 
@@ -26,13 +26,13 @@ public class User {
     private String content;
 
     @Builder
-    public User(String userId, String name, String content) {
-        this.userId = userId;
+    public Member(String name, String content) {
+        /*this.userId = userId;*/
         this.name = name;
         this.content = content;
     }
 
-    public static User create(String userId, String name, String content) {
-        return new User(userId, name, content);
+    public static Member create( String name, String content) {
+        return new Member( name, content);
     }
 }
