@@ -5,34 +5,35 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
 @NoArgsConstructor
-public class User {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "member_id")
     private Long id;
 
-    @Column(unique = true)
-    private String userId;
+    @Column(name = "room_id")
+    private Long roomId;
 
     private String name;
 
     //tmi
     private String content;
 
-    public User(String userId, String name, String content) {
-        this.userId = userId;
+    @Builder
+    public Member(String name, String content) {
+        /*this.userId = userId;*/
         this.name = name;
         this.content = content;
     }
 
-
-
-    public static User create(String userId, String name, String content) {
-        return new User(userId, name, content);
+    public static Member create( String name, String content) {
+        return new Member( name, content);
     }
 }
