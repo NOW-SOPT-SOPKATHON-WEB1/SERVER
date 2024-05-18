@@ -59,10 +59,10 @@
     </tr>
   	<tr align="center">
        <td>
-            메인 게임 페이지 <br/>
+            페어프로그래밍(방 생성 API, TMI 입력 및 방 입장 API, TMI 멤버별 조회 API <br/>
       </td>
        <td>
-            모달 제작 <br/>
+            페어프로그래밍(방 생성 API, TMI 입력 및 방 입장 API, TMI 멤버별 조회 API <br/>
       </td>
     </tr>
 </table>
