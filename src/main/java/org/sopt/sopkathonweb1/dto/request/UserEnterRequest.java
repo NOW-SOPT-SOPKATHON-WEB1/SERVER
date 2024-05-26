@@ -1,8 +1,10 @@
 package org.sopt.sopkathonweb1.dto.request;
 
 public record UserEnterRequest(
-    String name,
-    String content
+        int code,
+        String name,
+        String content
+
 ) {
 
 }
