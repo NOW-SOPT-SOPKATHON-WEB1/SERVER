@@ -3,17 +3,13 @@ package org.sopt.sopkathonweb1.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.sopt.sopkathonweb1.common.dto.SuccessMessage;
-import org.sopt.sopkathonweb1.common.dto.SuccessStatusResponse;
 import org.sopt.sopkathonweb1.controller.dto.BaseApiResponse;
 import org.sopt.sopkathonweb1.controller.dto.BaseApiResponseNonData;
 import org.sopt.sopkathonweb1.domain.Member;
 import org.sopt.sopkathonweb1.dto.request.RoomCreateRequest;
 import org.sopt.sopkathonweb1.dto.request.UserEnterRequest;
-import org.sopt.sopkathonweb1.dto.response.UserTmiResponse;
 import org.sopt.sopkathonweb1.service.RoomService;
 import org.sopt.sopkathonweb1.service.UserService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +26,9 @@ public class RoomController {
     private final UserService userService;
 
     @PostMapping("/create")
-    public BaseApiResponse createRoom(@RequestBody RoomCreateRequest request) {
+    public BaseApiResponseNonData createRoom(@RequestBody RoomCreateRequest request) {
         roomService.createRoom(request);
-        return new BaseApiResponse<>("방 생성 완료", null);
+        return new BaseApiResponseNonData("방 생성 완료");
     }
 
     @PostMapping("/{roomId}/enter")

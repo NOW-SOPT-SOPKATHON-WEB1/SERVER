@@ -1,10 +1,6 @@
 package org.sopt.sopkathonweb1.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +14,9 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-    @Column(name = "room_id")
-    private Long roomId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     private String name;
 
@@ -27,13 +24,15 @@ public class Member {
     private String content;
 
     @Builder
-    public Member(String name, String content) {
+    public Member(Room room, String name, String content) {
         /*this.userId = userId;*/
+        this.room = room;
         this.name = name;
         this.content = content;
     }
 
-    public static Member create( String name, String content) {
-        return new Member( name, content);
+    public static Member create(Room room, String name, String content) {
+
+        return new Member(room, name, content);
     }
 }

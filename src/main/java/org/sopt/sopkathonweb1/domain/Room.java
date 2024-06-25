@@ -23,12 +23,18 @@ public class Room extends BaseTimeEntity{
     @Column(name = "room_id")
     private Long id;
 
+    // 방 입장 코드
+    private int code;
+
     // 해당 방의 인원 수
     private int peopleCount;
 
 
     @Builder
-    public Room(int peopleCount) {
+    public Room(
+            int code, int peopleCount
+    ) {
+        this.code = code;
         this.peopleCount = peopleCount;
     }
 

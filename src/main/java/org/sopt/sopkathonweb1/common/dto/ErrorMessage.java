@@ -8,11 +8,8 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 public enum ErrorMessage {
 
-    // message 사용 예시
-    // MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "ID에 해당하는 사용자가 존재하지 않습니다."),
-    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "요청하신 사용자가 존재하지 않습니다.")
-
-
+    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "요청하신 사용자가 존재하지 않습니다."),
+    ROOM_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "입력하신 방 코드와 일치하는 방이 존재하지 않습니다.")
     ;
     private final int status;
 
